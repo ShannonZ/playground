@@ -16,9 +16,12 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <!-- Editor -->
-            <DataTemplate x:Key="MyEditor">
+            <DataTemplate x:Key="NUDEditor">
                 <Controls:NumericUpDown Minimum ="0"  Maximum = "10000"  Interval = "1" StringFormat="00.000 munit"
                                         Value="{Binding Value}"/>
+            </DataTemplate>
+            <DataTemplate x:Key="TXTEditor">
+                <TextBox Text="{Binding Value}"/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

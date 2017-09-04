@@ -23,6 +23,9 @@
             <DockPanel DockPanel.Dock="Top">
                 <windows:PropertyGrid  x:Name="sf1" />
             </DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <windows:PropertyGrid  x:Name="sf2" />
+            </DockPanel>
             <DockPanel></DockPanel>
         </DockPanel>
     </Grid>

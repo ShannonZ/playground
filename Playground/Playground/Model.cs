@@ -7,9 +7,9 @@ namespace Playground
     public class Model: AutoObject,INotifyPropertyChanged
     {
 
-        [Category("Cumstumized Editor")]
+        [Category("Cumstumized Editor(NumericUpDown)")]
         [DisplayName("using SF AutoObject")]
-        [PropertyGridOptions(SortOrder = 2, EditorDataTemplateResourceKey = "MyEditor")]
+        [PropertyGridOptions(SortOrder = 2, EditorDataTemplateResourceKey = "NUDEditor")]
         public double SF
         {
             get { return GetProperty<double>(); }
@@ -19,6 +19,26 @@ namespace Playground
         }
 
        public Model()
+        {
+            SF = 12.345;
+        }
+    }
+    public class Model2 : AutoObject, INotifyPropertyChanged
+    {
+
+        [Category("Cumstumized Editor(TextBox)")]
+        [DisplayName("using SF AutoObject")]
+        [PropertyGridOptions(SortOrder = 2, EditorDataTemplateResourceKey = "TXTEditor")]
+        public double SF
+        {
+            get { return GetProperty<double>(); }
+            set
+            {
+                SetProperty(value);
+            }
+        }
+
+        public Model2()
         {
             SF = 12.345;
         }
