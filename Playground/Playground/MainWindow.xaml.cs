@@ -22,30 +22,16 @@ namespace Playground
     /// </summary>
     public partial class MainWindow 
     {
-        public DispatcherTimer Timer;
         public Model m;
-        public Model1 m1;
-        public Model2 m2;
         public MainWindow()
         {
             InitializeComponent();
             m = new Model();
-            m1 = new Model1();
-            m2 = new Model2();
-            DataContext = m;
-            sf.SelectedObject = m;
-            sf1.SelectedObject = m1;
-            sf2.SelectedObject = m2;
 
-            Timer = new DispatcherTimer(DispatcherPriority.Render);
-            Timer.Tick += new EventHandler(Timer_Tick);
-            Timer.Interval = new System.TimeSpan(0, 0, 0, 0, 10);
-            Timer.Start();
+            pg1.SelectedObject = m;
+            pg2.SelectedObject = m;
+
         }
 
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            Debug.WriteLine("m.SF="+m.SF.ToString()+"  m1.SF="+m1.SF.ToString()+" m2.SF="+m2.SF.ToString());
-        }
     }
 }

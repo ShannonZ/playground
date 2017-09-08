@@ -13,20 +13,14 @@
             <local:Model x:Key="model"/>
         </Grid.Resources>
         <DockPanel>
-            <DockPanel  DockPanel.Dock="Top">
-                <Label DockPanel.Dock="Left">Normal Binding:</Label>
-                <Controls:NumericUpDown Value="{Binding SF}" HasDecimals="True"/>
-            </DockPanel>
-            <DockPanel DockPanel.Dock="Top">
-                <windows:PropertyGrid  x:Name="sf" />
-            </DockPanel>
-            <DockPanel DockPanel.Dock="Top">
-                <windows:PropertyGrid  x:Name="sf1" />
-            </DockPanel>
-            <DockPanel DockPanel.Dock="Top">
-                <windows:PropertyGrid  x:Name="sf2" />
-            </DockPanel>
-            <DockPanel></DockPanel>
+            <Controls:MetroAnimatedSingleRowTabControl x:Name="ParameterTabControl"  Margin="10 5 5 5">
+                <TabItem  Header="SF1" >
+                    <windows:PropertyGrid x:Name="pg1" Grid.Column="0"  ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Hidden" />
+                </TabItem>
+                <TabItem Header="SF2" >
+                    <windows:PropertyGrid x:Name="pg2" Grid.Column="0"  ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Hidden" />
+                </TabItem>
+            </Controls:MetroAnimatedSingleRowTabControl>
         </DockPanel>
     </Grid>
 </Controls:MetroWindow>
