@@ -3,12 +3,10 @@ E:\GitRepo\playground\Playground\Playground\bin\Debug\Playground.exe
 E:\GitRepo\playground\Playground\Playground\bin\Debug\Playground.pdb
 E:\GitRepo\playground\Playground\Playground\bin\Debug\ControlzEx.dll
 E:\GitRepo\playground\Playground\Playground\bin\Debug\MahApps.Metro.dll
-E:\GitRepo\playground\Playground\Playground\bin\Debug\SoftFluent.Windows.dll
 E:\GitRepo\playground\Playground\Playground\bin\Debug\System.Windows.Interactivity.dll
 E:\GitRepo\playground\Playground\Playground\bin\Debug\ControlzEx.pdb
 E:\GitRepo\playground\Playground\Playground\bin\Debug\MahApps.Metro.pdb
 E:\GitRepo\playground\Playground\Playground\bin\Debug\MahApps.Metro.xml
-E:\GitRepo\playground\Playground\Playground\bin\Debug\SoftFluent.Windows.pdb
 E:\GitRepo\playground\Playground\Playground\obj\Debug\Playground.csprojResolveAssemblyReference.cache
 E:\GitRepo\playground\Playground\Playground\obj\Debug\MainWindow.g.cs
 E:\GitRepo\playground\Playground\Playground\obj\Debug\App.g.cs
@@ -23,3 +21,4 @@ E:\GitRepo\playground\Playground\Playground\obj\Debug\Playground.csproj.Generate
 E:\GitRepo\playground\Playground\Playground\obj\Debug\Playground.csproj.CoreCompileInputs.cache
 E:\GitRepo\playground\Playground\Playground\obj\Debug\Playground.exe
 E:\GitRepo\playground\Playground\Playground\obj\Debug\Playground.pdb
+E:\GitRepo\playground\Playground\Playground\bin\Debug\SoftFluent.Windows.pdb

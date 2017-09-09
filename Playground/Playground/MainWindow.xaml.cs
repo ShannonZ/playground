@@ -27,11 +27,18 @@ namespace Playground
         {
             InitializeComponent();
             m = new Model();
-
-            pg1.SelectedObject = m;
-            pg2.SelectedObject = m;
-
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            pg1.SelectedObject = new Model();
+            pg2.SelectedObject = new Model();
+        }
+
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            //pg1.SelectedObject = m;
+            //pg2.SelectedObject = m;
+        }
     }
 }

@@ -14,11 +14,12 @@
                 <!-- Accent and AppTheme setting -->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedTabControl.xaml" />-->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <!-- Editor -->
             <DataTemplate x:Key="NUDEditor">
-                <Controls:NumericUpDown Minimum ="0"  Maximum = "10000"  Interval = "1" StringFormat="00.000 munit"
+                <Controls:NumericUpDown  x:Name="nud" Width="auto" Minimum ="0"  Maximum = "10000"  Interval = "1" StringFormat="00.000 munit"
                                         Value="{Binding Value}"/>
             </DataTemplate>
             <DataTemplate x:Key="TXTEditor">
