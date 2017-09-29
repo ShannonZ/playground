@@ -38,7 +38,7 @@
       <HintPath>..\packages\ControlzEx.3.0.1.66\lib\net45\ControlzEx.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.1.6.0-alpha011\lib\net45\MahApps.Metro.dll</HintPath>
+      <HintPath>..\packages\MahApps.Metro.1.6.0-alpha016\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
     <Reference Include="SoftFluent.Windows, Version=1.0.0.0, Culture=neutral, PublicKeyToken=02a67131d2a99c25, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

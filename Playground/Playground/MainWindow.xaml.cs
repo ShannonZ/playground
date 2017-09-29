@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -22,23 +23,50 @@ namespace Playground
     /// </summary>
     public partial class MainWindow 
     {
-        public Model m;
         public MainWindow()
         {
             InitializeComponent();
-            m = new Model();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            pg1.SelectedObject = new Model();
-            pg2.SelectedObject = new Model();
+      
         }
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            //pg1.SelectedObject = m;
-            //pg2.SelectedObject = m;
+            double[] TIs = { 1, 2, 3, 4, 5, 6 };
+            ObservableCollection<TI> itemsource = new ObservableCollection<TI>();
+            for (int i = 0; i < 6; i++)
+            {
+                itemsource.Add(new TI
+                {
+                    ID = i + 1,
+                    Value = (float)TIs[i],
+                    sign = "*"
+                });
+            }
+            dgTI.DataContext = itemsource;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            double[] TIs = { 1, 2, 3, 4, 5, 6 };
+            ObservableCollection<TI> itemsource = new ObservableCollection<TI>();
+            for (int i = 0; i < 6; i++)
+            {
+                itemsource.Add(new TI
+                {
+                    ID = i + 1,
+                    Value = (float)TIs[i],
+                    sign = "*"
+                });
+            }
+            dgTI.ItemsSource = itemsource;
+        }
+    }
+
+
+    public class TI
+    {
+        public int ID;
+        public float Value;
+        public string sign;
     }
 }
