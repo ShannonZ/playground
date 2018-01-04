@@ -21,14 +21,5 @@ namespace MahApp_SF
             pSPSE.SelectedObject = vm;
             DataContext = vm;
         }
-
-        private void Validation_Error(object sender, ValidationErrorEventArgs e)
-        {
-            if (e.Action == ValidationErrorEventAction.Added)
-                vm.NumErrors++;
-            else
-                vm.NumErrors--;
-            System.Diagnostics.Debug.WriteLine(vm.NumErrors);
-        }
     }
 }

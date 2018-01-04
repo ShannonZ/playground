@@ -1,23 +1,18 @@
-﻿<Controls:MetroWindow x:Class="MahApp_SF.MainWindow"
+﻿<Window x:Class="MahApp_SF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                       xmlns:sf="clr-namespace:SoftFluent.Windows;assembly=SoftFluent.Windows"
+        xmlns:sf="clr-namespace:SoftFluent.Windows;assembly=SoftFluent.Windows"
         xmlns:local="clr-namespace:MahApp_SF"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" Loaded="MetroWindow_Loaded">
     <Grid>
         <Grid.Resources>
-            <local:Error2Status x:Key="E2S"/>
             <local:Dec2Float x:Key="d2f"/>
             <DataTemplate x:Key="TEEditor">
-                <Controls:NumericUpDown  Value="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=LostFocus, Converter={StaticResource d2f}, ValidatesOnDataErrors=True,  NotifyOnValidationError=True}" 
-                                         Minimum="0"  Interval ="0.1" StringFormat="0.000 ms" 
-                                         Validation.Error="Validation_Error"
-                                         Controls:TextBoxHelper.IsMonitoring="True" Controls:TextBoxHelper.SelectAllOnFocus = "True" 
-                                         HorizontalContentAlignment="Left" HideUpDownButtons = "False"/>
+                <TextBox  Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,  ValidatesOnDataErrors=True,  NotifyOnValidationError=True}" />
             </DataTemplate>
         </Grid.Resources>
         <Grid.RowDefinitions>
@@ -29,14 +24,8 @@
             <ColumnDefinition Width="127*"/>
             <ColumnDefinition Width="390*"/>
         </Grid.ColumnDefinitions>
-        <Controls:NumericUpDown Grid.Column="0" Grid.Row="1" 
-                                Controls:TextBoxHelper.Watermark="Number smaller than 0"
-                                HasDecimals="True"   Validation.Error="Validation_Error"
-                                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                                Value="{Binding TE,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, NotifyOnValidationError=True}"/>
-        <TextBox Text="{Binding NumOfErrors,ValidatesOnDataErrors=True, UpdateSourceTrigger=LostFocus, NotifyOnValidationError=True}"   Validation.Error="Validation_Error"></TextBox>
-        <Button x:Name="btnActive" Grid.Column="0" Grid.Row="2"  Content="Triggered" IsEnabled="{Binding NumErrors, Converter={StaticResource E2S}}"/>
+        <TextBox  Text="{Binding TE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,  ValidatesOnDataErrors=True,  NotifyOnValidationError=True}" />
 
         <sf:PropertyGrid x:Name="pSPSE" Grid.Column="1"  Grid.Row="0" Grid.RowSpan="3" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Hidden" />
     </Grid>
-</Controls:MetroWindow>
+</Window>

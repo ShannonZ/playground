@@ -21,7 +21,6 @@ namespace MahApp_SF
 
     public class Dec2Float : System.Windows.Data.IValueConverter
     {
-
         public object Convert(object value, Type targetType, object parameters, System.Globalization.CultureInfo culture)
         {
             return (float)value;
