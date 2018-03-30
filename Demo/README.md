@@ -1,2 +1,1 @@
-#TeachNM
-基于WPF的Niumag教学仪配套软件
+
