@@ -1,4 +1,4 @@
 # playground
-For bug reproduce
+For bug reproduction
 
-MouseOver Animation (rotation 360 degrees) cannot be triggered when using mahapps.metro.
+After Clear  SeriesCollection and Add a new serie into it, the ListBox Item not update
