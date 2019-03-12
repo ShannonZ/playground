@@ -16,6 +16,10 @@ namespace TextureBasedVolumeRendering
 
         uint[] indices;
 
+        float ydeg = 0;
+        float zdeg = 0;
+        float xdeg = 0;
+
         int ElementBufferObject;
         int VertexBufferObject;
         int VertexArrayObject;
@@ -30,8 +34,8 @@ namespace TextureBasedVolumeRendering
         {
             GL.ClearColor(0.0f,0.0f,0.0f,1f);
 
-            generateIndices(109);
-            generateVertices(109);
+            generateIndices(1024);
+            generateVertices(1024);
 
             VertexBufferObject = GL.GenBuffer();
             GL.BindBuffer(BufferTarget.ArrayBuffer, VertexBufferObject);
@@ -61,22 +65,25 @@ namespace TextureBasedVolumeRendering
             GL.VertexAttribPointer(vertexLocation, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), 0);
 
             //GL.Enable(EnableCap.DepthTest);
+            GL.Enable(EnableCap.Texture3DExt);
             GL.Enable(EnableCap.Blend);
             GL.BlendFunc(BlendingFactor.SrcAlpha, BlendingFactor.OneMinusSrcAlpha);
 
-            Matrix4 transform = Matrix4.Identity;
-            transform *= Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(5));
-            transform *= Matrix4.CreateRotationY(MathHelper.DegreesToRadians(5));
-            transform *= Matrix4.CreateTranslation(0.1f, 0.1f, 0.1f);
-
-            //Now that the matrix is finished, pass it to the vertex shader.
-            //Go over to shader.vert to see how we finally apply this to the vertices
-            shader.SetMatrix4("transform", transform);
             base.OnLoad(e);
         }
 
         protected override void OnRenderFrame(FrameEventArgs e)
         {
+            Matrix4 transform = Matrix4.Identity;
+            transform *= Matrix4.CreateRotationZ(MathHelper.DegreesToRadians(zdeg));
+            transform *= Matrix4.CreateRotationY(MathHelper.DegreesToRadians(ydeg));
+            transform *= Matrix4.CreateRotationX(MathHelper.DegreesToRadians(xdeg));
+            transform.M33 *= 25.0f / 256;
+
+            //Now that the matrix is finished, pass it to the vertex shader.
+            //Go over to shader.vert to see how we finally apply this to the vertices
+            shader.SetMatrix4("transform", transform);
+
             GL.Clear(ClearBufferMask.ColorBufferBit|ClearBufferMask.DepthBufferBit);
 
             GL.BindVertexArray(VertexArrayObject);
@@ -104,6 +111,26 @@ namespace TextureBasedVolumeRendering
                 Exit();
             }
 
+            if (input.IsKeyDown(Key.Left))
+            {
+                ydeg += 5;
+            }
+
+            if (input.IsKeyDown(Key.Right))
+            {
+                ydeg -= 5;
+            }
+
+            if (input.IsKeyDown(Key.Up))
+            {
+                zdeg += 5;
+            }
+
+            if (input.IsKeyDown(Key.Down))
+            {
+                zdeg -= 5;
+            }
+
             base.OnUpdateFrame(e);
         }
 
@@ -120,8 +147,8 @@ namespace TextureBasedVolumeRendering
             GL.BindVertexArray(0);
             GL.UseProgram(0);
 
-            //GL.DeleteBuffer(VertexBufferObject);
-            //GL.DeleteVertexArray(VertexArrayObject);
+            GL.DeleteBuffer(VertexBufferObject);
+            GL.DeleteVertexArray(VertexArrayObject);
 
             shader.Dispose();
             texture.Dispose();
@@ -138,19 +165,19 @@ namespace TextureBasedVolumeRendering
 
                 vertices[cur] = -.5f;
                 vertices[cur + 1] = -.5f;
-                vertices[cur + 2] = -0.5f + i / n;
+                vertices[cur + 2] = -0.5f + 1.0f*i / n;
 
                 vertices[cur+3] = -.5f;
                 vertices[cur + 4] = .5f;
-                vertices[cur + 5] = -0.5f + i / n;
+                vertices[cur + 5] = -0.5f + 1.0f * i / n;
 
                 vertices[cur+6] = .5f;
                 vertices[cur + 7] = .5f;
-                vertices[cur + 8] = -0.5f + i / n;
+                vertices[cur + 8] = -0.5f + 1.0f * i / n;
 
                 vertices[cur+9] = .5f;
                 vertices[cur + 10] = -.5f;
-                vertices[cur + 11] = -0.5f + i / n;
+                vertices[cur + 11] = -0.5f + 1.0f * i / n;
             }
         }
 

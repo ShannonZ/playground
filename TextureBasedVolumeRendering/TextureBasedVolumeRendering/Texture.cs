@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using OpenTK.Graphics.OpenGL4;
-//using System.Drawing.Imaging;
-using System.Drawing;
 using System.IO;
 
 namespace GLCommon
@@ -23,7 +20,7 @@ namespace GLCommon
             Use();
 
 
-            int count = 109 * 256 * 256;
+            int count = 225 * 256 * 256;
             
 
             
@@ -66,7 +63,7 @@ namespace GLCommon
                     rgbabuf[4 * i + 3] = raw[i];
                 }
 
-                GL.TexImage3D(TextureTarget.Texture3D, 0, PixelInternalFormat.Rgba, 256, 256,109, 0, PixelFormat.Rgba, PixelType.UnsignedByte, rgbabuf);
+                GL.TexImage3D(TextureTarget.Texture3D, 0, PixelInternalFormat.Rgba, 256, 256,225, 0, PixelFormat.Rgba, PixelType.UnsignedByte, rgbabuf);
             }
         }
 

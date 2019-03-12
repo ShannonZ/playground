@@ -16,7 +16,7 @@ void main()
 	//It takes two parameters: the sampler to use, and a vec2, used as texture coordinates
     vec4 color = texture(texture0, texCoord);
 
-	if(color.a <= 0.03) // Or whichever comparison here
+	if(color.a <= 0.15) // Or whichever comparison here
         discard;
 	outputColor = color;
 }
