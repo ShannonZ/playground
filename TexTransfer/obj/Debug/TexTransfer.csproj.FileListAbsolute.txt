@@ -1,0 +1,15 @@
+C:\Users\Administrator\Desktop\TexTransfer\obj\Debug\TexTransfer.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\TexTransfer\obj\Debug\TexTransfer.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\TexTransfer\bin\Debug\backface.frag
+C:\Users\Administrator\Desktop\TexTransfer\bin\Debug\backface.vert
+C:\Users\Administrator\Desktop\TexTransfer\bin\Debug\frontface.frag
+C:\Users\Administrator\Desktop\TexTransfer\bin\Debug\frontface.vert
+C:\Users\Administrator\Desktop\TexTransfer\bin\Debug\RayCasting3.exe.config
+C:\Users\Administrator\Desktop\TexTransfer\bin\Debug\RayCasting3.exe
+C:\Users\Administrator\Desktop\TexTransfer\bin\Debug\RayCasting3.pdb
+C:\Users\Administrator\Desktop\TexTransfer\bin\Debug\OpenTK.dll
+C:\Users\Administrator\Desktop\TexTransfer\bin\Debug\OpenTK.pdb
+C:\Users\Administrator\Desktop\TexTransfer\bin\Debug\OpenTK.xml
+C:\Users\Administrator\Desktop\TexTransfer\obj\Debug\TexTransfer.csproj.CopyComplete
+C:\Users\Administrator\Desktop\TexTransfer\obj\Debug\RayCasting3.exe
+C:\Users\Administrator\Desktop\TexTransfer\obj\Debug\RayCasting3.pdb
