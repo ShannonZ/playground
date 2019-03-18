@@ -1,0 +1,14 @@
+F:\GitRepo\playground\Tex3D\obj\Debug\Tex3D.csprojAssemblyReference.cache
+F:\GitRepo\playground\Tex3D\obj\Debug\Tex3D.csproj.CoreCompileInputs.cache
+F:\GitRepo\playground\Tex3D\bin\Debug\head256.raw
+F:\GitRepo\playground\Tex3D\bin\Debug\frontface.frag
+F:\GitRepo\playground\Tex3D\bin\Debug\frontface.vert
+F:\GitRepo\playground\Tex3D\bin\Debug\RayCasting3.exe.config
+F:\GitRepo\playground\Tex3D\bin\Debug\RayCasting3.exe
+F:\GitRepo\playground\Tex3D\bin\Debug\RayCasting3.pdb
+F:\GitRepo\playground\Tex3D\bin\Debug\OpenTK.dll
+F:\GitRepo\playground\Tex3D\bin\Debug\OpenTK.pdb
+F:\GitRepo\playground\Tex3D\bin\Debug\OpenTK.xml
+F:\GitRepo\playground\Tex3D\obj\Debug\Tex3D.csproj.CopyComplete
+F:\GitRepo\playground\Tex3D\obj\Debug\RayCasting3.exe
+F:\GitRepo\playground\Tex3D\obj\Debug\RayCasting3.pdb
