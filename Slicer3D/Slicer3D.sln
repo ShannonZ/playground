@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.1300
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Slicer3D", "Slicer3D\Slicer3D.csproj", "{CC429871-775E-47A3-9361-27FDB6435222}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{4F7B3364-97B5-4FC8-A832-E3B6D8F75521}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlicerConsole", "SlicerConsole\SlicerConsole.csproj", "{047671E4-F67A-4392-A6C1-540B6B156C89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{CC429871-775E-47A3-9361-27FDB6435222}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC429871-775E-47A3-9361-27FDB6435222}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC429871-775E-47A3-9361-27FDB6435222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F7B3364-97B5-4FC8-A832-E3B6D8F75521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F7B3364-97B5-4FC8-A832-E3B6D8F75521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F7B3364-97B5-4FC8-A832-E3B6D8F75521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F7B3364-97B5-4FC8-A832-E3B6D8F75521}.Release|Any CPU.Build.0 = Release|Any CPU
+		{047671E4-F67A-4392-A6C1-540B6B156C89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{047671E4-F67A-4392-A6C1-540B6B156C89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{047671E4-F67A-4392-A6C1-540B6B156C89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{047671E4-F67A-4392-A6C1-540B6B156C89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

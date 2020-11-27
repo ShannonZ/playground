@@ -1,4 +1,5 @@
-﻿using OpenTK.Graphics.OpenGL4;
+﻿using OpenTK;
+using OpenTK.Graphics.OpenGL4;
 using System;
 using System.Windows;
 
@@ -34,7 +35,7 @@ namespace Slicer3D
         {
             shader_Box.Use();
             GL.BindVertexArray(VAO_Box);
-            GL.DrawArrays(PrimitiveType.Lines, 0, 12);
+            GL.DrawElements(BeginMode.Lines,24,DrawElementsType.UnsignedInt,0);
         }
 
         private float[] InitVertex(float x, float y, float z)
@@ -59,7 +60,7 @@ namespace Slicer3D
             var Vertx = R / MAX;
             var Verty = C / MAX;
             var Vertz = S / MAX;
-            float[] vertices = InitVertex(Vertx, Verty, Vertz);
+            float[] vertices = InitVertex(R, C, S);
 
             uint[] indices = { 0, 1, 1, 5, 5, 4, 4, 0, 2, 3, 3, 7, 7, 6, 6, 2, 2, 0, 6, 4, 7, 5, 3, 1 };
 
@@ -97,7 +98,16 @@ namespace Slicer3D
 
         private void OpenTkControl_Ready()
         {
-            InitBoxVAO(1f, 1f, 1f);
+            InitBoxVAO(0.5f, 0.5f, 0.5f);
+
+            Matrix4 m4 = Matrix4.CreateTranslation(1, 1, 0);
+            Vector4 v4 = Vector4.One;
+            v4 *= m4;
+            
+            Vector4 v5 = m4* Vector4.One;
+            Console.WriteLine("matrix = \r\n"+m4.ToString());
+            Console.WriteLine("v4 = \r\n"+v4.ToString());
+            Console.WriteLine("v5 = \r\n"+v5.ToString());
         }
     }
 }
