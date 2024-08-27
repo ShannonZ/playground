@@ -8,7 +8,8 @@
 
         mc:Ignorable="d"  >
 
-    <materialDesign:Card  Margin="8 5" >
+    <!--Change Card to plain Grid would solve the issue-->
+        <materialDesign:Card  Margin="8 5" >
         <Grid Margin="5 10 5 0" Background="Transparent" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -21,6 +22,7 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
+                <!--disable ButtonProgessAssist ALSO solved the issue-->
                 <Button Click="bt_AccumulativeSampling_Click" Margin="5 0 5 0"
     materialDesign:ButtonProgressAssist.IsIndeterminate="True"
     materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"

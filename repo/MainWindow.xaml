@@ -3,12 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:Views="clr-namespace:Client.Views"
 
         WindowStartupLocation="CenterScreen"
         xmlns:local="clr-namespace:Client"  
-        xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"  Width="800" Height="600"
         Title="MemoryLeak when Minimize Window"
         SnapsToDevicePixels="True"
@@ -49,35 +47,16 @@
                                         <StackPanel Grid.Column="2" Orientation="Horizontal">
                                             <StackPanel.Resources>
                                                 <Style x:Key="WindowButtonStyle" TargetType="{x:Type Button}">
-
                                                     <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
                                                     <Setter Property="Width" Value="46"/>
                                                     <Setter Property="Margin" Value="4 0 0 0"/>
                                                 </Style>
-
-                                                <Style x:Key="NormalButtonStyle" TargetType="Button" BasedOn="{StaticResource WindowButtonStyle}">
-                                                    <Setter Property="Visibility" Value="Visible"/>
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Value="Maximized">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
-
-                                                <Style x:Key="MaximizedButtonStyle" TargetType="Button" BasedOn="{StaticResource WindowButtonStyle}">
-                                                    <Setter Property="Visibility" Value="Visible"/>
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" Value="Normal">
-                                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
                                             </StackPanel.Resources>
                                             <Button Style="{StaticResource WindowButtonStyle}" Click="MinimizeWindow">
-                                                <materialDesign:PackIcon Kind="WindowMinimize" />
+                                                -
                                             </Button>
                                             <Button Style="{StaticResource WindowButtonStyle}" Click="CloseWindow">
-                                                <materialDesign:PackIcon Kind="WindowClose" />
+                                                x
                                             </Button>
                                         </StackPanel>
                                     </Grid>
@@ -99,6 +78,7 @@
 
         <Grid Grid.Column="1" >
             <ContentControl x:Name="MainWindowcontent"/>
+            <!--Directly use <Views:SamplingView /> could solve the issue-->
         </Grid>
     </Grid>
 </Window>

@@ -8,7 +8,7 @@
 		<UseWindowsForms>True</UseWindowsForms>
 		<AssemblyVersion>1.1.22.13</AssemblyVersion>
 		<RootNamespace>Client</RootNamespace>
-		<AssemblyName>NMAnalysis</AssemblyName>
+		<AssemblyName>MemoryLeakIssue</AssemblyName>
 	
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<StartupObject></StartupObject>
@@ -28,7 +28,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="MaterialDesignColors" Version="3.1.0" />
-		<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+		<PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
 	</ItemGroup>
 
 </Project>
