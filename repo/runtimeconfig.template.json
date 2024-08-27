@@ -1,0 +1,8 @@
+﻿{
+  "runtimeOptions": {
+    "configProperties": {
+      "System.GC.HighMemoryPercent": 80,
+      "System.GC.ConserveMemory": 5
+    }
+  }
+}
