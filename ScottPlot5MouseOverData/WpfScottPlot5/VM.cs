@@ -10,10 +10,6 @@ namespace WpfScottPlot5
 
         public VM()
         {
-            SetGrid();
-            Plot();
-            ClearFigure();
-            ChangeMouseInteractivity();
             FastPlot();
             Crosshair();
         }
@@ -54,18 +50,6 @@ namespace WpfScottPlot5
             };
         }
 
-        private void ClearFigure()
-        {
-            PlotControl.Plot.Clear();
-        }
-
-        void Plot()
-        {
-            double[] dataX = { 1, 2, 3, 4, 5 };
-            double[] dataY = { 1, 4, 9, 16, 25 };
-            PlotControl.Plot.Add.Scatter(dataX, dataY);
-            PlotControl.Refresh();
-        }
 
         void FastPlot()
         {
@@ -103,64 +87,6 @@ namespace WpfScottPlot5
             };
             PlotControl.Plot.Axes.Bottom.TickGenerator = myTickGenerator;
             PlotControl.Refresh();
-        }
-
-        void SetGrid()
-        {
-            var myPlot = PlotControl.Plot;
-            // shade regions between major grid lines
-            myPlot.Grid.XAxisStyle.FillColor1 = Colors.Gray.WithOpacity(0.1);
-            myPlot.Grid.XAxisStyle.FillColor2 = Colors.Gray.WithOpacity(0.2);
-            myPlot.Grid.YAxisStyle.FillColor1 = Colors.Gray.WithOpacity(0.1);
-            myPlot.Grid.YAxisStyle.FillColor2 = Colors.Gray.WithOpacity(0.2);
-
-            // show minor grid lines too
-            myPlot.Grid.XAxisStyle.MinorLineStyle.Width = 1;
-            myPlot.Grid.YAxisStyle.MinorLineStyle.Width = 1;
-
-        }
-        void ChangeMouseInteractivity()
-        {
-            PlotControl.UserInputProcessor.IsEnabled = true;
-
-            // remove all existing responses so we can create and add our own
-            PlotControl.UserInputProcessor.UserActionResponses.Clear();
-
-            // middle-click-drag pan
-            var panButton = ScottPlot.Interactivity.StandardMouseButtons.Right;
-            var panResponse = new ScottPlot.Interactivity.UserActionResponses.MouseDragPan(panButton);
-            PlotControl.UserInputProcessor.UserActionResponses.Add(panResponse);
-
-            // right-click-drag zoom rectangle
-            var zoomRectangleButton = ScottPlot.Interactivity.StandardMouseButtons.Left;
-            var zoomRectangleResponse = new ScottPlot.Interactivity.UserActionResponses.MouseDragZoomRectangle(zoomRectangleButton);
-            PlotControl.UserInputProcessor.UserActionResponses.Add(zoomRectangleResponse);
-
-            // right-click autoscale
-            var autoscaleButton = ScottPlot.Interactivity.StandardMouseButtons.Middle;
-            var autoscaleResponse = new ScottPlot.Interactivity.UserActionResponses.SingleClickAutoscale(autoscaleButton);
-            PlotControl.UserInputProcessor.UserActionResponses.Add(autoscaleResponse);
-
-            //// left-click menu
-            //var menuButton = ScottPlot.Interactivity.StandardMouseButtons.Left;
-            //var menuResponse = new ScottPlot.Interactivity.UserActionResponses.SingleClickContextMenu(menuButton);
-            //PlotControl.UserInputProcessor.UserActionResponses.Add(menuResponse);
-
-            // ESC key autoscale too
-            var autoscaleKey = new ScottPlot.Interactivity.Key("escape");
-            Action<ScottPlot.IPlotControl, ScottPlot.Pixel> autoscaleAction = (plotControl, pixel) => plotControl.Plot.Axes.AutoScale();
-            var autoscaleKeyResponse = new ScottPlot.Interactivity.UserActionResponses.KeyPressResponse(autoscaleKey, autoscaleAction);
-            PlotControl.UserInputProcessor.UserActionResponses.Add(autoscaleKeyResponse);
-
-            // WASD keys pan
-            var keyPanResponse = new ScottPlot.Interactivity.UserActionResponses.KeyboardPanAndZoom()
-            {
-                PanUpKey = new ScottPlot.Interactivity.Key("W"),
-                PanLeftKey = new ScottPlot.Interactivity.Key("A"),
-                PanDownKey = new ScottPlot.Interactivity.Key("S"),
-                PanRightKey = new ScottPlot.Interactivity.Key("D"),
-            };
-            PlotControl.UserInputProcessor.UserActionResponses.Add(keyPanResponse);
         }
     }
 }
